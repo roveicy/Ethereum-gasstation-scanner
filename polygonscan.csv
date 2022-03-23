@@ -1,0 +1,13 @@
+date_time,standardgas,fastgas,rapidgas,pendingcount,avgtxnsperblock,avgnetworkutilization
+2022-03-21 22:35:30,47.1 Gwei,62.3 Gwei,62.8 Gwei,8000 Txns,54 Txns,37.87%
+2022-03-21 22:35:46,47.1 Gwei,62.3 Gwei,62.8 Gwei,7855 Txns,84 Txns,37.83%
+2022-03-21 22:36:02,47.1 Gwei,62.3 Gwei,62.8 Gwei,7954 Txns,61 Txns,37.80%
+2022-03-22 20:41:39,32.4 Gwei,40.1 Gwei,41.1 Gwei,7988 Txns,144 Txns,46.80%
+2022-03-22 20:43:25,36 Gwei,40.1 Gwei,41.1 Gwei,7995 Txns,114 Txns,47.15%
+2022-03-22 20:44:32,31.1 Gwei,31.1 Gwei,31.6 Gwei,7999 Txns,63 Txns,47.66%
+2022-03-22 20:44:48,31.1 Gwei,38.8 Gwei,39.3 Gwei,7994 Txns,76 Txns,47.65%
+2022-03-22 15:48:10,30.9 Gwei,36.6 Gwei,55 Gwei,7983 Txns,68 Txns,47.46%
+2022-03-22 15:48:27,37.3 Gwei,53.6 Gwei,61.7 Gwei,7922 Txns,65 Txns,47.50%
+2022-03-22 15:48:47,37.3 Gwei,57 Gwei,57.5 Gwei,7955 Txns,68 Txns,46.64%
+2022-03-22 15:49:04,40 Gwei,57 Gwei,57.5 Gwei,7998 Txns,75 Txns,46.62%
+2022-03-22 15:49:22,44 Gwei,59.8 Gwei,60.8 Gwei,7959 Txns,66 Txns,46.65%
