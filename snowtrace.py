@@ -36,25 +36,28 @@ class snowtrace:
                 fd.writelines("{},{},{},{},{},{},{}\n".format(column[6], column[0], column[1], column[2], column[3], column[4], column[5]))
 
     async def scrap(page):
-        # SCRAPE WEBSITE:
-        columns = []
-        column_1 = await page.waitForSelector("#standardgas")
-        columns.append(await page.evaluate('(element) => element.textContent', column_1))
-        column_2 = await page.waitForSelector("#fastgas")
-        columns.append(await page.evaluate('(element) => element.textContent', column_2))
-        column_3 = await page.waitForSelector("#rapidgas")
-        columns.append(await page.evaluate('(element) => element.textContent', column_3))
-        column_4 = await page.waitForSelector("#pendingcount > b")
-        columns.append(await page.evaluate('(element) => element.textContent', column_4)) 
-        column_5 = await page.waitForSelector("#avgtxnsperblock > b")
-        columns.append(await page.evaluate('(element) => element.textContent', column_5))    
-        column_6 = await page.waitForSelector("#avgnetworkutilization > b")
-        columns.append(await page.evaluate('(element) => element.textContent', column_6))    
-        now = datetime.now()    
-        columns.append(now.strftime("%Y-%m-%d %H:%M:%S"))   
-        print("Snowtrace:", columns)
-        await snowtrace.csv_insert(columns) 
-        snowtrace.get_db_mongo(columns)
+        try:
+            # SCRAPE WEBSITE:
+            columns = []
+            column_1 = await page.waitForSelector("#standardgas")
+            columns.append(await page.evaluate('(element) => element.textContent', column_1))
+            column_2 = await page.waitForSelector("#fastgas")
+            columns.append(await page.evaluate('(element) => element.textContent', column_2))
+            column_3 = await page.waitForSelector("#rapidgas")
+            columns.append(await page.evaluate('(element) => element.textContent', column_3))
+            column_4 = await page.waitForSelector("#pendingcount > b")
+            columns.append(await page.evaluate('(element) => element.textContent', column_4)) 
+            column_5 = await page.waitForSelector("#avgtxnsperblock > b")
+            columns.append(await page.evaluate('(element) => element.textContent', column_5))    
+            column_6 = await page.waitForSelector("#avgnetworkutilization > b")
+            columns.append(await page.evaluate('(element) => element.textContent', column_6))    
+            now = datetime.now()    
+            columns.append(now.strftime("%Y-%m-%d %H:%M:%S"))   
+            print("Snowtrace:", columns)
+            await snowtrace.csv_insert(columns) 
+            snowtrace.get_db_mongo(columns)
+        except:
+            pass
 
     async def main():
         # MAIN LOOP:
