@@ -1,5 +1,6 @@
 import asyncio
 from datetime import datetime
+from readline import parse_and_bind
 import pymongo
 from pyppeteer import launch
 from os.path import exists
@@ -60,13 +61,16 @@ class polygonscan:
             pass
 
     async def main():
-        # MAIN LOOP:
-        url = "https://polygonscan.com/gastracker"
-        browser = await launch(headless = True, defaultViewport = None, args=["--start-maximized", '--disable-blink-features=AutomationControlled'])
-        page = await browser.newPage()
-        print("Scrapping polygonscan...")
-        await page.goto(url)
-        await polygonscan.scrap(page)
-        await browser.close()
+        try:
+            # MAIN LOOP:
+            url = "https://polygonscan.com/gastracker"
+            browser = await launch(headless = True, defaultViewport = None, args=["--start-maximized", '--disable-blink-features=AutomationControlled'])
+            page = await browser.newPage()
+            print("Scrapping polygonscan...")
+            await page.goto(url)
+            await polygonscan.scrap(page)
+            await browser.close()
+        except:
+            pass
 
     # asyncio.get_event_loop().run_until_complete(main())

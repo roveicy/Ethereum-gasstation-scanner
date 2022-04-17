@@ -14,6 +14,6 @@ async def main():
             await bscscan.main()
         except TimeoutError:
             pass
-        sleep(30)
+        sleep(5)
 
 asyncio.get_event_loop().run_until_complete(main())

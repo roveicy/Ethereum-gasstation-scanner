@@ -58,13 +58,16 @@ class ftmscan:
             pass
 
     async def main():
-        # MAIN LOOP:
-        url = "https://ftmscan.com/gastracker"
-        browser = await launch(headless = True, defaultViewport = None, args=["--start-maximized", '--disable-blink-features=AutomationControlled'])
-        page = await browser.newPage()
-        print("Scrapping ftmscan...")
-        await page.goto(url)
-        await ftmscan.scrap(page)
-        await browser.close()
+        try:
+            # MAIN LOOP:
+            url = "https://ftmscan.com/gastracker"
+            browser = await launch(headless = True, defaultViewport = None, args=["--start-maximized", '--disable-blink-features=AutomationControlled'])
+            page = await browser.newPage()
+            print("Scrapping ftmscan...")
+            await page.goto(url)
+            await ftmscan.scrap(page)
+            await browser.close()
+        except:
+            pass
 
     # asyncio.get_event_loop().run_until_complete(main())
